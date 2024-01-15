@@ -110,6 +110,15 @@ function render(el, container) {
   container.append(dom);
 }
 
+const ReactDOM = {
+  createRoot(container) {
+    return {
+      render(App) {
+        render(App, container);
+      }
+    }
+  }
+};
+
 const App = createElement('div', { id: 'app' }, 'hi-', 'mini-react');
-console.log(App)
-render(App, document.querySelector('#root'));
+ReactDOM.createRoot(document.querySelector('#root')).render(App);
