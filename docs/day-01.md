@@ -1,0 +1,1 @@
+1. document.createTextNode("")如果不传递值，也必须有个空的字符串，不然会进行报错。
